@@ -63,7 +63,7 @@ function addSignInInputs() {
   lastNameGroup.appendChild(lastNameLabel);
   lastNameGroup.appendChild(lastName);
 
-  const formulario = document.querySelector("form")  
+ 
   const newDiv = document.createElement("div");
   newDiv.setAttribute("class","form-group");
 
@@ -75,6 +75,7 @@ function addSignInInputs() {
   textArea.setAttribute("name","Descripcion");
   textArea.setAttribute("rows","10");
   textArea.setAttribute("cols","50");
+  textArea.setAttribute("id","textArea");
   textArea.textContent = "Descripcion"
 
   newDiv.appendChild(newLabel);
@@ -84,12 +85,14 @@ function addSignInInputs() {
 
   document.querySelector("#username").parentNode.after(firstNameGroup);
   document.querySelector("#firstName").parentNode.after(lastNameGroup);
-  formulario.append(newDiv);
+  document.querySelector("#lastName").parentNode.after(newDiv);
 }
 
 function removeSignInInputs() {
   document.querySelector("#firstName").parentNode.remove();
   document.querySelector("#lastName").parentNode.remove();
+  document.querySelector("#textArea").parentNode.remove();
+
 }
 
 function updateButtonLabel(target) {
