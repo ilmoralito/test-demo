@@ -52,34 +52,7 @@
           <th>Keyword</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>React – A JavaScript library for building user interfaces</td>
-          <td>
-            <a href="https://reactjs.org/">https://reactjs.org/</a>
-          </td>
-          <td>javascript, reactjs</td>
-          <td>views</td>
-        </tr>
-        <tr>
-          <td>Vue.js</td>
-          <td><a href="https://vuejs.org/">https://vuejs.org/</a></td>
-          <td>javascript, vue</td>
-          <td>views</td>
-        </tr>
-        <tr>
-          <td>Svelte • Cybernetically enhanced web apps</td>
-          <td><a href="https://svelte.dev/">https://svelte.dev/</a></td>
-          <td>javascript, svelte</td>
-          <td>views</td>
-        </tr>
-        <tr>
-          <td>Next.js by Vercel - The React Framework</td>
-          <td><a href="https://nextjs.org/">https://nextjs.org/</a></td>
-          <td>javascript, reactjs</td>
-          <td>framewroks</td>
-        </tr>
-      </tbody>
+      <tbody></tbody>
     </table>
 
     <template id="bookmarks">
@@ -92,5 +65,55 @@
         <td class="keyword"></td>
       </tr>
     </template>
+
+    <script>
+      const tbody = document.querySelector("tbody");
+
+      const bookmarks = [
+        {
+          name: "React – A JavaScript library for building user interfaces",
+          location: "https://reactjs.org/",
+          tags: ["javascript", "reactjs"],
+          keyword: "views",
+        },
+        {
+          name: "Vue.js",
+          location: "https://vuejs.org/",
+          tags: ["javascript", "vue"],
+          keyword: "views",
+        },
+        {
+          name: "Svelte • Cybernetically enhanced web apps",
+          location: "https://svelte.dev/",
+          tags: ["javascript", "svelte"],
+          keyword: "views",
+        },
+        {
+          name: "Next.js by Vercel - The React Framework",
+          location: "https://nextjs.org/",
+          tags: ["javascript", "reactjs"],
+          keyword: "frameworks",
+        },
+      ];
+
+      function createRow(bookmark) {
+        const template = document.querySelector("#bookmarks");
+        const clone = template.content.cloneNode(true);
+
+        clone.querySelector(".name").innerText = bookmark.name;
+        clone.querySelector(".location a").innerText = bookmark.location;
+        clone.querySelector(".location a").href = bookmark.location;
+        clone.querySelector(".tags").innerText = bookmark.tags.join(", ");
+        clone.querySelector(".keyword").innerText = bookmark.keyword;
+
+        return clone;
+      }
+
+      for (const bookmark of bookmarks) {
+        const instance = createRow(bookmark);
+
+        tbody.appendChild(instance);
+      }
+    </script>
   </body>
 </html>
