@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Links</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        font-size: 13px;
+      }
+
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid gray;
+        padding: 10px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      caption {
+        text-align: left;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Bookmarks
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Tags</th>
+          <th>Keyword</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>React – A JavaScript library for building user interfaces</td>
+          <td>
+            <a href="https://reactjs.org/">https://reactjs.org/</a>
+          </td>
+          <td>javascript, reactjs</td>
+          <td>views</td>
+        </tr>
+        <tr>
+          <td>Vue.js</td>
+          <td><a href="https://vuejs.org/">https://vuejs.org/</a></td>
+          <td>javascript, vue</td>
+          <td>views</td>
+        </tr>
+        <tr>
+          <td>Svelte • Cybernetically enhanced web apps</td>
+          <td><a href="https://svelte.dev/">https://svelte.dev/</a></td>
+          <td>javascript, svelte</td>
+          <td>views</td>
+        </tr>
+        <tr>
+          <td>Next.js by Vercel - The React Framework</td>
+          <td><a href="https://nextjs.org/">https://nextjs.org/</a></td>
+          <td>javascript, reactjs</td>
+          <td>framewroks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <template id="bookmarks">
+      <tr>
+        <td class="name"></td>
+        <td class="location">
+          <a href=""></a>
+        </td>
+        <td class="tags"></td>
+        <td class="keyword"></td>
+      </tr>
+    </template>
+  </body>
+</html>
