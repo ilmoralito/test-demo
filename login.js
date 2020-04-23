@@ -59,11 +59,32 @@ function addSignInInputs() {
 
   lastNameGroup.setAttribute("class", "form-group");
 
+
   lastNameGroup.appendChild(lastNameLabel);
   lastNameGroup.appendChild(lastName);
 
+  const formulario = document.querySelector("form")  
+  const newDiv = document.createElement("div");
+  newDiv.setAttribute("class","form-group");
+
+  const newLabel = document.createElement("label");
+  newLabel.setAttribute("type","text");
+  newLabel.textContent = "Descripcion"
+
+  const textArea = document.createElement("textarea");
+  textArea.setAttribute("name","Descripcion");
+  textArea.setAttribute("rows","10");
+  textArea.setAttribute("cols","50");
+  textArea.textContent = "Descripcion"
+
+  newDiv.appendChild(newLabel);
+  newDiv.appendChild(textArea);
+
+
+
   document.querySelector("#username").parentNode.after(firstNameGroup);
   document.querySelector("#firstName").parentNode.after(lastNameGroup);
+  formulario.append(newDiv);
 }
 
 function removeSignInInputs() {
