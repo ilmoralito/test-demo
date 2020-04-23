@@ -59,16 +59,40 @@ function addSignInInputs() {
 
   lastNameGroup.setAttribute("class", "form-group");
 
+
   lastNameGroup.appendChild(lastNameLabel);
   lastNameGroup.appendChild(lastName);
 
+ 
+  const newDiv = document.createElement("div");
+  newDiv.setAttribute("class","form-group");
+
+  const newLabel = document.createElement("label");
+  newLabel.setAttribute("type","text");
+  newLabel.textContent = "Descripcion"
+
+  const textArea = document.createElement("textarea");
+  textArea.setAttribute("name","Descripcion");
+  textArea.setAttribute("rows","10");
+  textArea.setAttribute("cols","50");
+  textArea.setAttribute("id","textArea");
+  textArea.textContent = "Descripcion"
+
+  newDiv.appendChild(newLabel);
+  newDiv.appendChild(textArea);
+
+
+
   document.querySelector("#username").parentNode.after(firstNameGroup);
   document.querySelector("#firstName").parentNode.after(lastNameGroup);
+  document.querySelector("#lastName").parentNode.after(newDiv);
 }
 
 function removeSignInInputs() {
   document.querySelector("#firstName").parentNode.remove();
   document.querySelector("#lastName").parentNode.remove();
+  document.querySelector("#textArea").parentNode.remove();
+
 }
 
 function updateButtonLabel(target) {
