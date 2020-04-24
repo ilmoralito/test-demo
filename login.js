@@ -62,13 +62,31 @@ function addSignInInputs() {
   lastNameGroup.appendChild(lastNameLabel);
   lastNameGroup.appendChild(lastName);
 
+  const emailGroup = document.createElement("div");
+  const emailLabel = document.createElement("label");
+  const email = document.createElement("input");
+
+  emailLabel.textContent = "Email";
+  emailLabel.setAttribute("for", "email");
+
+  email.name = "email";
+  email.id = "email";
+
+  emailGroup.setAttribute("class", "form-group");
+
+  emailGroup.appendChild(emailLabel);
+  emailGroup.appendChild(email);
+
   document.querySelector("#username").parentNode.after(firstNameGroup);
   document.querySelector("#firstName").parentNode.after(lastNameGroup);
+  document.querySelector("#lastName").parentNode.after(emailGroup);
 }
 
 function removeSignInInputs() {
   document.querySelector("#firstName").parentNode.remove();
   document.querySelector("#lastName").parentNode.remove();
+  document.querySelector("#email").parentNode.remove();
+
 }
 
 function updateButtonLabel(target) {
