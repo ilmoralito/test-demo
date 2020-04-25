@@ -36,7 +36,9 @@ ul {
 ul li {
   border: 1px solid gray;
   cursor: pointer;
-  display: inline;
+  display: flex;
+  flex-direction: column-reverse;
+  float: right;
   padding: 10px;
 }
 
